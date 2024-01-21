@@ -1,0 +1,687 @@
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    margin: 0;
+    padding-bottom: 1.1em;
+    padding-top: 1em;
+    /* Establece el header como máxima prioridad para dibujarse por encima de cualquier elemento */
+    z-index: 1;
+    /* La sombra en el header para poder diferenciar cuándo acaba */
+    box-shadow: 0 0.1em 0.6em rgba(0, 0, 0, 0.1);
+}
+
+
+/* Estilos para el logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.logo > a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+    font-size: 1.6em;
+    letter-spacing: -0.1em;
+    align-self: center;
+}
+
+.logo > a span {
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: 0;
+}
+
+/* Esto elimina el estilo que el navegador aplica cuando ya has visitado el enlace */
+.logo > a:visited {
+    text-decoration: none;
+}
+
+/* Estilos para el navbar */
+
+.navbar > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar > ul li a {
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 0.2em 0.2em;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar > ul li .active {
+    color: #DE2333;
+}
+
+.navbar > ul li a:hover, .logo > a:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para el bg del home */
+.bg-home {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: center;
+}
+
+.bg-home > picture > img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: top;
+}
+
+.bg-home > h2 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+    font-weight: 400;
+    font-size: 2em;
+    width: 70%;
+}
+
+/* Estilos para bloques de contenido en texto */
+.text-content {
+    margin: 1.2em;
+    font-size: 1.2em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+/* Estilos para las noticias del home */
+
+.home-news-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-bottom: 3em;
+}
+
+.home-news-entry > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.home-news-entry > h2 {
+    color: #DE2333;
+    margin: 0;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.home-news-entry > h2 > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.home-news-entry > a {
+    color: #DE2333;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.home-news-entry > h2 > a:hover, .home-news-entry > a:hover {
+    color: #000000;
+}
+
+/* Esto elimina el estilo que el navegador aplica cuando ya has visitado el enlace */
+.home-news-entry > a:visited {
+    text-decoration: none;
+}
+
+.applications-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em;
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+    margin-bottom: 2.5em;
+    background: #F4F6F7;
+    font-size: 1.1em;
+}
+
+.applications-entry > h2 {
+    color: #000000;
+    margin: 0;
+    font-size: 1.7em;
+    text-align: left;
+}
+
+.applications-entry > h2 > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.applications-entry a {
+    color: #DE2333;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* No nos interesa que los enlaces dentro del texto sean más grandes y en negrita */
+.applications-entry > p > a {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.applications-entry a:hover {
+    color: #000000;
+}
+
+/* Esto no se pedía en el ejercicio pero queda mejor destacarlo */
+.applications-entry > h2 > a:hover {
+    opacity: 0.7;
+}
+
+/* En el cine */
+
+.movies-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+    margin-bottom: 2.5em;
+    background: #F4F6F7;
+}
+
+.movies-entry > p {
+    margin: 1em;
+    font-size: 1.1em;
+}
+
+/* Fuente: https://www.ankursheel.com/blog/full-width-you-tube-video-embed */
+.movies-entry-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+.movies-entry-video > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/*  Para noticias individuales  */
+
+.news-article {
+    font-size: 1.2em;
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+    margin-bottom: 1.2em;
+}
+
+.news-page-breadcrumb {
+    padding: 0;
+    font-size: 1.2em;
+    margin-left: 10%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.news-page-breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.news-page-breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin-left: 0.4em;
+    margin-right: 0.4em;
+    content: ">";
+}
+
+.news-page-breadcrumb ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.news-page-breadcrumb ul li.active, .news-page-breadcrumb ul li a:hover {
+    color: #DE2333;
+}
+
+.news-article > img.news-article-banner {
+    width: 100%;
+}
+
+.news-article > p.news-article-author {
+    font-size: 0.8em;
+}
+
+.news-article > article {
+    margin-top: 2.5em;
+    quotes: "«" "»";
+}
+
+.news-article > article > h1 {
+    font-size: 2.2em;
+}
+
+.news-article > article a {
+    font-weight: bold;
+    font-style: italic;
+    color: #DE2333;
+    text-decoration: none;
+}
+
+.news-article > article a:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+.news-article h2 {
+    font-size: 1.6em;
+    text-align: left;
+}
+
+.news-article > div.news-article-about {
+    padding: 1.5em;
+    background: #F4F6F7;
+}
+
+.news-article > div.news-article-about {
+    padding: 1.5em;
+    background: #F4F6F7;
+}
+
+.news-article > div.news-article-about img.news-article-about-logo {
+    width: 5em;
+    border-radius: 1em;
+}
+
+.news-article > div.news-article-about ul.news-article-about-links {
+    list-style: none;
+    padding: 0;
+    color: #DE2333;
+}
+
+.news-article > div.news-article-about ul.news-article-about-links > li::before {
+    content: '>';
+    margin-right: 0.2em;
+}
+
+.news-article > div.news-article-about ul.news-article-about-links a {
+    color: #DE2333;
+    text-decoration: none;
+}
+
+.news-article > div.news-article-about ul.news-article-about-links a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.news-article-comment > p {
+    font-size: 0.8em;
+}
+
+.news-article-comment a {
+    color: #DE2333;
+    text-decoration: none;
+}
+
+.news-article-comment a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.news-article-comment > form > input:not([type="checkbox"]), .news-article-comment > form > textarea {
+    border-style: none;
+    background: #F4F6F7;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 400;
+    color: #000000;
+}
+
+.news-article-comment > form > input:not([type="checkbox"]) {
+    height: 2em;
+}
+
+.news-article-comment > form > textarea {
+    height: 10em;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.news-article-comment > form > textarea, .news-article-comment > form > input {
+    margin-bottom: 1em;
+}
+
+.news-article-comment > form > input[type="submit"] {
+    background: #DE2333;
+    color: #ffffff;
+    width: auto;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+.news-article-latest-news {
+    margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.news-article-latest-news h2 {
+    text-align: left;
+    margin-top: 0;
+}
+
+.news-article-latest-news-entries {
+    justify-content: left;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-article-latest-news-entry img {
+    border-radius: 100%;
+    width: 6em;
+    height: 6em;
+}
+
+.news-article-latest-news-entry-content {
+    margin-left: 1.5em;
+    text-transform: uppercase;
+    text-align: justify-all;
+}
+
+.news-article-latest-news-entry-content > h3, .news-article-latest-news-entry-content > p {
+    margin: 0;
+}
+
+.news-article-latest-news-entry a {
+    color: black;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.news-article-latest-news-entry a:hover {
+    opacity: 0.7;
+}
+
+.news-article-latest-news-entry {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding-bottom: 1.2em;
+    border-bottom-style: dotted;
+    border-bottom-width: 0.01em;
+    margin-top: 1em;
+    width: 100%;
+}
+
+footer {
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5em;
+    color: #ffffff;
+
+    /* Esto fija el footer al fondo de la página */
+    margin-top: auto;
+    width: 100%;
+}
+
+footer > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer > ul.legal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+footer > ul.legal a {
+    color: inherit;
+    text-decoration: none;
+}
+
+footer > ul.legal a:hover {
+    color: #DE2333;
+}
+
+footer > ul.media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+footer > ul.media a {
+    margin: 0.2em;
+}
+
+footer > ul.media a:hover {
+    opacity: 0.7;
+}
+
+footer > p {
+    text-align: center;
+}
+
+/* Media queries para pc */
+
+@media only screen and (min-width: 1025px) {
+
+    header {
+        padding-left: 10%;
+    }
+
+    .logo {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .navbar > ul li {
+        float: left;
+        padding-right: 1.2em;
+    }
+
+
+    .bg-home > picture > img {
+        height: 25em;
+    }
+
+    .bg-home > h2 {
+        font-size: 4em;
+        top: 50%;
+        margin: 0;
+    }
+
+    .home-news-entries {
+        display: flex;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .home-news-entry {
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+        height: 100%;
+        width: 100%;
+    }
+
+    .text-content {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+
+    .applications-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .movies-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .news-page-content {
+        display: flex;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .news-article {
+        margin-left: 0;
+    }
+
+    .news-article-about {
+        display: flex;
+    }
+
+    .news-article-about > img {
+        height: 100%;
+        margin-right: 2%;
+    }
+
+    .news-article-about-content > h1 {
+        margin-top: 0;
+    }
+
+    .news-article-latest-news {
+        width: 100%;
+    }
+
+    footer {
+        align-items: flex-start;
+    }
+
+    footer > p {
+        margin-left: 10%;
+    }
+
+    footer > ul.legal, footer > ul.media {
+        flex-direction: row;
+        margin-left: 10%;
+        padding: 0;
+    }
+
+    footer > ul.legal > li:not(:last-child)::after {
+        display: inline-block;
+        margin-left: 0.4em;
+        margin-right: 0.4em;
+        content: "·";
+    }
+
+    footer > p {
+        margin-left: 10%;
+        text-align: left;
+    }
+}
+
+/* Media queries para tablet */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .bg-home > picture > img {
+        height: 18em;
+    }
+
+    .bg-home > h2 {
+        font-size: 3em;
+        top: 50%;
+        margin: 0;
+    }
+
+    .home-news-entries {
+        display: flex;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .home-news-entry {
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+        height: 100%;
+        width: 100%;
+    }
+
+    .text-content {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .applications-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-article-about {
+        display: flex;
+    }
+
+    .news-article-about > img {
+        height: 100%;
+        margin-right: 2%;
+    }
+
+    .news-article-about-content > h1 {
+        margin-top: 0;
+    }
+
+    .news-article-latest-news {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+
